@@ -166,7 +166,7 @@ function Bai2(props) {
       total += item.quantity * itemList[index].price;
     });
     setTotal(total);
-    setRemainMoney(remainMoney - total);
+    setRemainMoney(10000000000 - total);
   };
   const handleInterest = (item, index) => {
     let nextCart = [...cart];
