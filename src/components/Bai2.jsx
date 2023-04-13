@@ -152,8 +152,9 @@ function Bai2(props) {
     });
   });
   //cart[x] = { id: "", quantity: 0 }
+  const initMoney = 10000000000;
   const [total, setTotal] = useState(0);
-  const [remainMoney, setRemainMoney] = useState(10000000000);
+  const [remainMoney, setRemainMoney] = useState(initMoney);
   // ***handle function***//
   const handleAdd = (item, index) => {
     let nextCart = [...cart];
@@ -166,7 +167,7 @@ function Bai2(props) {
       total += item.quantity * itemList[index].price;
     });
     setTotal(total);
-    setRemainMoney(10000000000 - total);
+    setRemainMoney(initMoney - total);
   };
   const handleInterest = (item, index) => {
     let nextCart = [...cart];
@@ -183,7 +184,7 @@ function Bai2(props) {
       totalTemp += item.quantity * itemList[index].price;
     });
     setTotal(totalTemp);
-    setRemainMoney(10000000000 - totalTemp);
+    setRemainMoney(initMoney - totalTemp);
   };
   //Reset cart
   const handleResetCart = () => {
@@ -195,7 +196,7 @@ function Bai2(props) {
     });
     setCart(resetCart);
     setTotal(0);
-    setRemainMoney(10000000000);
+    setRemainMoney(initMoney);
   };
   //Main return
   return (
