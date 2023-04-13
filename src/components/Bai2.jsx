@@ -175,15 +175,15 @@ function Bai2(props) {
     } else {
       nextCart[index].quantity = 0;
     }
-    console.log(nextCart);
+    // console.log(nextCart);
     setCart(nextCart);
     //total
-    let total = 0;
+    let totalTemp = 0;
     nextCart.forEach((item, index) => {
-      total += item.quantity * itemList[index].price;
+      totalTemp += item.quantity * itemList[index].price;
     });
-    setTotal(total);
-    setRemainMoney(remainMoney - total);
+    setTotal(totalTemp);
+    setRemainMoney(10000000000 - totalTemp);
   };
   //Reset cart
   const handleResetCart = () => {
